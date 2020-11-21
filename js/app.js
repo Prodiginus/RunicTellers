@@ -1,4 +1,4 @@
-const to = (num) => {
+const to = (num, el) => {
   let current = document.getElementsByClassName('rune').length
   if(num >= current) {
     for (let i = 0; i < num - current; i++) {
@@ -11,7 +11,7 @@ const to = (num) => {
   }
 }
 const fetchRunes = (num) => {
-
+  console.log(num)
 }
 const makeRune = () => {
   let img = document.createElement('div')
@@ -24,4 +24,6 @@ const makeRune = () => {
   rune.appendChild(desc)
   return rune
 }
-//document.getElementsByClassName('img')[0].style.backgroundImage = "url('https://fundraise.globalbrigades.org/media_gallery/thumb/320/0/Engineering_2014_Icon_Small.png')"
+const updateRune = (data) => {
+
+}

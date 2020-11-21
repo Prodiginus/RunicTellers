@@ -1,20 +1,71 @@
-body {
-	background:#2c2c2c;
-	color:#eee;
+html, body {
+  margin: 0;
+  padding: 0;
+  background:#B08c77;
+	color:#000000;
 }
-.runesWrapper {
-  background-color: #222;
-  width: 50%;
-  min-width: 500px;
+section {
+  margin: 20px auto;
+  width: 90%;
+  min-height: 400px;
+  padding:0.75rem 1.5rem;
+  background-color: #977254;
+  max-width: 2500px;
+}
+.txtWrapper {
   margin: 0 auto;
+  width: 40%;
+  max-width: 1800px;
+  text-align: center;
+}
+.intro h1 {
+  font-size: 3rem;
+}
+.intro p,
+.btn {
+  font-size: 1.5rem;
 }
 .numBtns {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
 }
-.begone {
-  display: none;
+button:-moz-focus-inner,
+button:focus,
+button:focus-within,
+:focus {
+  outline: none !important;
+  border: none;
+}
+.btn {
+  background-color: #6B2504;
+  color: #eee;
+  padding: 4px 0;
+  transition: all linear 0.1s;
+  border: solid 2px transparent !important;
+  outline: none !important;
+}
+.btn:hover,
+.btn:focus {
+  border-color: #e24c07 !important;
+  background-color: #7a3e23;
+}
+.numBtn {
+  width: 100px;
+}
+#runeContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+.rune {
+  background-color: #492515;
+  width: 250px;
+  height: 450px;
+  border-radius: 20px;
+  color: #aaa;
 }
 .img {
   width: 250px;
@@ -28,14 +79,6 @@ body {
   height: 200px;
   width: 100%;
 }
-.rune {
-  background-color: #333;
-  width: 250px;
-  height: 350px;
-}
-#runeContainer {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  gap: 20px;
+.gen {
+  padding: 0.1rem 1rem
 }
