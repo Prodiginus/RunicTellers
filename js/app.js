@@ -247,8 +247,11 @@ const genSpread = (el, rNum) => {
   }
   let l = document.querySelectorAll(`.${c} .runeContainer>.rune`)
   for(let i = 0; i < l.length; i++) {
-    console.log(rr)
-    l[i].innerHTML = `<div class="img"></div><div class="desc">${rr[i][1].blurb}</div>`
+    if(rr[i][0] === false) {
+      l[i].innerHTML = `<div class="img"></div><div class="desc">${rr[i][1].negBlurb}</div>`
+    } else {
+      l[i].innerHTML = `<div class="img"></div><div class="desc">${rr[i][1].blurb}</div>`
+    }
   }
 }
 /* util funcs */
