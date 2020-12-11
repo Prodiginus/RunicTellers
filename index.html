@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
+    <!-- <script src='js/runes.js'></script> -->
+		<script src="js/app.js"></script>
 	</head>
 	<body>
     <section class="intro">
@@ -13,25 +15,40 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores quasi facilis aspernatur eveniet nemo qui soluta reiciendis fugiat quibusdam voluptate perspiciatis illo fuga modi nulla, at in dolore officiis deleniti.Labore quod at quaerat reprehenderit enim aperiam molestiae saepe suscipit odit eligendi illum nostrum, aliquid consequuntur eius est repellendus facere distinctio provident porro, vel dicta cum tempora modi voluptatibus. Voluptates.</p>  
       </div>
       </section>
-    <section class="runesWrapper">
-      <div class=numBtns>
-        <button class="btn numBtn" onClick="to(1, this)">1</button>
-        <button class="btn numBtn" onClick="to(2, this)">2</button>
-        <button class="btn numBtn" onClick="to(3, this)">3</button>
-        <button class="btn numBtn" onClick="to(4, this)">4</button>
-        <button class="btn numBtn" onClick="to(5, this)">5</button>
-        <button class="btn numBtn" onClick="to(6, this)">6</button>
-        <button class="btn numBtn" onClick="to(7, this)">7</button>
-      </div>
-      <div id="runeContainer">
-        <div class="rune">
-          <div class="img"></div>
-          <div class="desc">lorem impsum dolar set amet</div>
+      <section class="daily">
+        <div id="runeContainer" class="runeContainer">
+          <div id="d1" class="rune">
+            <div class="img"></div>
+            <div class="desc"></div>
+          </div>
+          <div id="d2" class="rune">
+            <div class="img"></div>
+            <div class="desc"></div>
+          </div>
+          <div id="d3" class="rune">
+            <div class="img"></div>
+            <div class="desc"></div>
+          </div>
         </div>
-      </div>
-      <button class="gen btn" onClick="fetchRunes(document.getElementsByClassName('rune').length)">Generate Spread</button>
-    </section>
-    <script src='js/runes.js'></script>
-		<script src="js/app.js"></script>
+        <button class="gen btn" onClick="genSpread(this, document.querySelectorAll('.daily .rune').length)">Generate Daily Spread</button>
+      </section>
+      <section class="runesWrapper">
+        <div class=numBtns>
+          <button class="btn numBtn" onClick="to(1, this)">1</button>
+          <button class="btn numBtn" onClick="to(2, this)">2</button>
+          <button class="btn numBtn" onClick="to(3, this)">3</button>
+          <button class="btn numBtn" onClick="to(4, this)">4</button>
+          <button class="btn numBtn" onClick="to(5, this)">5</button>
+          <button class="btn numBtn" onClick="to(6, this)">6</button>
+          <button class="btn numBtn" onClick="to(7, this)">7</button>
+        </div>
+        <div id="runeContainer1" class="runeContainer">
+          <div class="rune">
+            <div class="img"></div>
+            <div class="desc"></div>
+          </div>
+        </div>
+        <button class="gen btn" onClick="genSpread(this, document.querySelectorAll('.runesWrapper .rune').length)">Generate Spread</button>
+      </section>
 	</body>
 </html>
