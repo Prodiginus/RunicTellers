@@ -45,13 +45,51 @@ button:focus-within,
   border: solid 2px transparent !important;
   outline: none !important;
 }
-.btn:hover,
+.btn:hover {
+  background: #FFD700;
+}
 .btn:focus {
   border-color: #e24c07 !important;
   background-color: #7a3e23;
 }
 .numBtn {
   width: 100px;
+}
+.popup{
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.popup-content{
+    height: 250px;
+    width: 500px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+input{
+    margin: 20px auto;
+    display: block;
+    width: 50%;
+    padding: 8px;
+    border: 1px solid gray;
+}
+.close{
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: #fff;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.75);
+    cursor: pointer;
 }
 .runeContainer {
   display: flex;

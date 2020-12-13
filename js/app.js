@@ -192,7 +192,6 @@ const runes = {
 		'negDeep': 'Bad Karma, Prejudice, Totalitarianism',
 	}
 }
-
 /* custom rune spread functions */
 const to = (num, el) => {
   let current = document.querySelectorAll('.runesWrapper .rune').length
@@ -217,7 +216,6 @@ const makeRune = () => {
   rune.appendChild(desc)
   return rune
 }
-
 /* generating runes */
 const fetchRunes = (num) => {
   let r = []
@@ -235,8 +233,6 @@ const randomRune = () => {
   }
   return n
 }
-
-/*generate spread*/
 const genSpread = (el, rNum) => {
   /* if cookie exists, do some stuff first */
   el = el.closest("section")
@@ -259,14 +255,14 @@ const genSpread = (el, rNum) => {
   }
 }
 /* util funcs */
-
-/* add a cookie to get the user's name, cookie value, and expiration date */
-function addCookie(cname, cvalue, exdays) {
-  var date = new Date(); // will be halved:
-  Date.setTime(date.getTime() + (exdays*24*60*60*1000));
-  var expires = "expires="+ date.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
+const addCookie = () => {
+               var now = new Date();
+               now.setMonth( now.getMonth()  );
+               cookievalue = escape(document.myform.customer.value);
+               document.cookie="name=" + cookievalue;
+               document.cookie = "expires=" + now.toUTCString();
+               document.write ( cookievalue + ", view your daily fortune below: " );
+            }
 const parseCookie = () => {
 
 }
