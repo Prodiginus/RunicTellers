@@ -255,14 +255,28 @@ const genSpread = (el, rNum) => {
   }
 }
 /* util funcs */
+
+const checkCookie = () => {
+  var user=getCookie("username");
+  if (user != "") {
+    alert("Welcome again " + user);
+  } else {
+     user = prompt("Please enter your name:","");
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
+  }
+}//checkCookie
+
 const addCookie = () => {
                var now = new Date();
                now.setMonth( now.getMonth()  );
                cookievalue = escape(document.myform.customer.value);
                document.cookie="name=" + cookievalue;
                document.cookie = "expires=" + now.toUTCString();
-               document.write ( cookievalue + ", view your daily fortune below: " );
-            }
+              // document.write ( cookievalue + ", view your daily fortune below: " );
+
+            }//addCookie
 const parseCookie = () => {
 
 }
