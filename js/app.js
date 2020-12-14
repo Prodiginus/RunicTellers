@@ -243,7 +243,7 @@ const genSpread = (el, rNum) => {
     if(a < 0) { rr.push([false, runes[Math.abs(a)]]) } else { rr.push([true, runes[a]]) }
   })
   if (el.classList.contains('daily')) {
-    addCookie(r)
+    checkCookie(r)
   }
   let l = document.querySelectorAll(`.${c} .runeContainer>.rune`)
   for(let i = 0; i < l.length; i++) {
@@ -257,7 +257,7 @@ const genSpread = (el, rNum) => {
 /* util funcs */
 
 const checkCookie = () => {
-  var user=getCookie("username");
+	var user=getCookie("username");
   if (user != "") {
     alert("Welcome again " + user);
   } else {
@@ -266,17 +266,30 @@ const checkCookie = () => {
        setCookie("username", user, 30);
      }
   }
-}//checkCookie
-
-const addCookie = () => {
-               var now = new Date();
-               now.setMonth( now.getMonth()  );
-               cookievalue = escape(document.myform.customer.value);
-               document.cookie="name=" + cookievalue;
-               document.cookie = "expires=" + now.toUTCString();
-              // document.write ( cookievalue + ", view your daily fortune below: " );
-
-            }//addCookie
-const parseCookie = () => {
-
 }
+
+const getCookie = (cname) => {
+	var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+const setCookie = (cname,cvalue,exdays) => {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+
+//setCookie("","","");
