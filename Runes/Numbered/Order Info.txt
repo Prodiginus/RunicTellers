@@ -1,0 +1,2 @@
+This is just for the numbered ordered version of the same thing as the excel list I've made as well.
+If it is easier, you can remove the 0X's in the first 10 numbers for file reading if nessisary.
