@@ -71,7 +71,7 @@ button:focus-within,
   width: 250px;
   height: 250px;
   overflow: hidden;
-  background-image: url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pngall.com%2Fwp-content%2Fuploads%2F2017%2F03%2FPebble-Stone-PNG-Clipart-180x180.png&f=1&nofb=1");
+  background-image: url("../images/blankRune.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
