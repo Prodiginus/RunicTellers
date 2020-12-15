@@ -259,7 +259,7 @@ const genSpread = (el, rNum) => {
 const checkCookie = () => {
 	var user=getCookie("username");
   if (user != "") {
-    alert("Welcome again " + user);
+    continue;
   } else {
      user = prompt("Please enter your name:","");
      if (user != "" && user != null) {
@@ -291,5 +291,17 @@ const setCookie = (cname,cvalue,exdays) => {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
+const get_Date = () =>{
+	var d = new Date();
+	var date = d.getDate();
+	return date;
+}
+
+const get_Month =() =>{
+	var d = new Date();
+	var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+ //returns current month:
+	return months[d.getMonth()];
+}
 
 //setCookie("","","");
