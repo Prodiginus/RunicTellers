@@ -1,3 +1,9 @@
+var cookieRunes = '{"daily":[' +
+'{"username":"","runes":"" },' +
+'{"username":"","runes":"" },' +
+'{"username":"","runes":"" }]}';
+
+
 const runes = {
 	0: {
 		'name': 'Fehu',
@@ -281,11 +287,11 @@ const genSpread = (el, rNum) => {
 	}
 
 	const setCookie = (cname,cvalue,exdays, r) => {
-
 		var d = new Date();
 		d.setTime(d.getTime() + (exdays*24*60*60*1000));
 		var expires = "expires=" + d.toGMTString();
-		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/" + ";!" + r ;
+		// the exclaimation point is for parsing r out of the cookie.
+		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 	}
 
 	const getCookie = (cname) => {
@@ -302,6 +308,14 @@ const genSpread = (el, rNum) => {
 			}
 		}
 		return "";
+	}
+
+	const getCookieByName = (cname) => {
+
+		const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${cname}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+
 	}
 
 	const parseRuneArray = () =>{
