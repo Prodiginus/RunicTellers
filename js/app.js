@@ -228,6 +228,7 @@ const to = (num, el) => {
       document.querySelectorAll('.runesWrapper .rune')[0].remove();
     }
   }
+  
 }
 const makeRune = () => {
   let img = document.createElement('div')
