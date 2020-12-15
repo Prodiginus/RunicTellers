@@ -234,7 +234,6 @@ const randomRune = () => {
   return n
 }
 const genSpread = (el, rNum) => {
-  /* if cookie exists, do some stuff first */
   el = el.closest("section")
   let c = el.classList[0]
   let r = fetchRunes(rNum)
@@ -243,7 +242,10 @@ const genSpread = (el, rNum) => {
     if(a < 0) { rr.push([false, runes[Math.abs(a)]]) } else { rr.push([true, runes[a]]) }
   })
   if (el.classList.contains('daily')) {
-    addCookie(r)
+    if(!checkCookie()) {
+      /* ask user for name and stuff and set the values of rr to the runes part of the cookie */
+    }
+    /* if there is a cookie, set the values of rr to those values in the cookie */
   }
   let l = document.querySelectorAll(`.${c} .runeContainer>.rune`)
   for(let i = 0; i < l.length; i++) {
