@@ -6,6 +6,7 @@ const runes = {
 	'deep': 'Luck, Plenty, Success, Energy, Foresight',
 	'negBlurb': 'Greed may be a downfall for your actions.',
 	'negDeep': 'Greed, Burnout, Discord, Poverty',
+  'n': 0
 },
 	1: {
 		'name': 'Uruz',
@@ -14,6 +15,7 @@ const runes = {
 		'deep': 'Physical Strength, Courage, Action, Freedom',
 		'negBlurb': 'Weakness overwhelms the rune, careful.',
 		'negDeep': 'Weakness, Obession, Domination',
+    'n': 1
 	},
 	2: {
 		'name': 'Thurisaz',
@@ -22,6 +24,7 @@ const runes = {
 		'deep': 'Reactive Force, Conflict, Instinctual Will',
 		'negBlurb': 'Danger and defenselessness is brought forward.',
 		'negDeep': 'Danger, Compulsion, Torment, Evil, Bad Human',
+    'n': 2
 	},
 	3: {
 		'name': 'Ansuz',
@@ -30,6 +33,7 @@ const runes = {
 		'deep': 'True Vision, Insight, Communication',
 		'negBlurb': 'Misunderstanding and manipulation is shown.',
 		'negDeep': 'Misunderstanding, Delusion, Vanity, Boredom',
+    'n': 3
 	},
 	4: {
 		'name': 'Raidho',
@@ -38,6 +42,7 @@ const runes = {
 		'deep': 'Travel, Evolution, Perspective Change',
 		'negBlurb': 'Your rune shows delocation, and seperation with in and out.',
 		'negDeep': 'Rigidity, Stasis, Possible Death',
+    'n': 4
 	},
 	5: {
 		'name': 'Kenaz',
@@ -46,6 +51,7 @@ const runes = {
 		'deep': 'Creativity, Revalation, Inspiration',
 		'negBlurb': 'Darkness will bring instability. Watch out for false hope.',
 		'negDeep': 'Disease, Breakup, False Hope, Exposure',
+    'n': 5
 	},
 	6: {
 		'name': 'Gebo',
@@ -54,6 +60,7 @@ const runes = {
 		'deep': 'Relationships, Contracts, Sacrafice, Generosity',
 		'negBlurb': 'This rune shows greed and obligations. Too much on one side.',
 		'negDeep': 'Loneliness, Dependence, Obligation, Bribery',
+    'n': 6
 	},
 	7: {
 		'name': 'Wunjo',
@@ -62,6 +69,7 @@ const runes = {
 		'deep': 'Fellowship, Harmony, Glory, Pleasure',
 		'negBlurb': 'Sorrow and pain fills this rune, watch out for rage.',
 		'negDeep': 'Sorrow, Strife, Intoxication, Rage, Delirium',
+    'n': 7
 	},
 	8: {
 		'name': 'Hagalaz',
@@ -70,6 +78,7 @@ const runes = {
 		'deep': 'Destruction, Weather, Controled Crisis',
 		'negBlurb': 'Pain and Loss is shown in this rune.',
 		'negDeep': 'Stagnation, Loss of Power, Pain, Suffering, Hardship',
+    'n': 8
 	},
 	9: {
 		'name': 'Nauthiz',
@@ -78,6 +87,7 @@ const runes = {
 		'deep': 'Delays, Confusion, Power to overcome',
 		'negBlurb': 'Depravity and Want is shown. Reflect on the issue.',
 		'negDeep': 'Necessity, Want, Depravity, Need, Emotional Hunger',
+    'n': 9
 	},
 	10: {
 		'name': 'Isa',
@@ -86,6 +96,7 @@ const runes = {
 		'deep': 'Challenge, Waiting, Standstill, Blocks',
 		'negBlurb': 'Treachery and Deceit are coming.',
 		'negDeep': 'Ego-Mania, Dullness, Illusion,  Stealth, Ambush',
+    'n': 10
 	},
 	11: {
 		'name': 'Jera',
@@ -94,6 +105,7 @@ const runes = {
 		'deep': 'Prosperity, Success Earned, Fruitful Season',
 		'negBlurb': 'Sudden Setbacks and poverty are shown by the rune.',
 		'negDeep': 'Repetition, Bad Timing, Reversal,  Conflict',
+    'n': 11
 	},
 	12: {
 		'name': 'Eihwaz',
@@ -102,6 +114,7 @@ const runes = {
 		'deep': 'Reliability, Trustworthiness, Endurance',
 		'negBlurb': 'Confusion is brought forward by this.',
 		'negDeep': 'Confusion, Destuction, Weakness',
+    'n': 12
 	},
 	13: {
 		'name': 'Perthro',
@@ -110,6 +123,7 @@ const runes = {
 		'deep': 'Uncertain, Mystery, Occult, Destiny',
 		'negBlurb': 'The same will repeat, Stagnation into malaise.',
 		'negDeep': 'Addiction, Stagnation, Loneliness, Malaise',
+    'n': 13
 	},
 	14: {
 		'name': 'Algiz',
@@ -118,6 +132,7 @@ const runes = {
 		'deep': 'Defense, Guarding,  Awakening, Higher Life',
 		'negBlurb': 'This rune shows a warning, something taboo.',
 		'negDeep': 'Hidden Danger, Warning, Turning Away',
+    'n': 14
 	},
 	15: {
 		'name': 'Sowilo',
@@ -126,6 +141,7 @@ const runes = {
 		'deep': 'Life-Force, Health, Success, Victory',
 		'negBlurb': 'Goals planned are shown to fail. Prepare yourself.',
 		'negDeep': 'False Goals, Bad Counsel, Retribution',
+    'n': 15
 	},
 	16: {
 		'name': 'Tiwaz',
@@ -134,6 +150,7 @@ const runes = {
 		'deep': 'Justice, Analysis, Self-Sacrifice, Rationality',
 		'negBlurb': 'Passion is dwindling, to where seperation can happen.',
 		'negDeep': 'Seperation, War, Over-Analysis, Failure',
+    'n': 16
 	},
 	17: {
 		'name': 'Berkano',
@@ -142,6 +159,7 @@ const runes = {
 		'deep': 'Birth, Total Growth, Regeneration, New Beggingings',
 		'negBlurb': 'Abandon and Loss of Control are on the horizon.',
 		'negDeep': 'Sterility, Stagnation, Loss of Control, Deceit',
+    'n': 17
 	},
 	18: {
 		'name': 'Ehwaz',
@@ -150,6 +168,7 @@ const runes = {
 		'deep': 'Transportation, Movement, Change, Marriage',
 		'negBlurb': 'Mistrust and Betrayal can happen with this rune.',
 		'negDeep': 'Disharmony, Betrayal, Reckless Haste, Confined',
+    'n': 18
 	},
 	19: {
 		'name': 'Mannaz',
@@ -158,6 +177,7 @@ const runes = {
 		'deep': 'Intellect, Creation, Skill, Ability, Awareness',
 		'negBlurb': 'Expect no help from others with this rune.',
 		'negDeep': 'Depression, Mortality, Blindness, Calculation',
+    'n': 19
 	},
 	20: {
 		'name': 'Laguz',
@@ -166,6 +186,7 @@ const runes = {
 		'deep': 'Dreams, Fantasy, Organic Growth, Deep',
 		'negBlurb': 'You may be making wrong decisions or have poor judgement.',
 		'negDeep': 'Fear, Avoidance, Madness, Obession, Despair, Sickness',
+    'n': 20
 	},
 	21: {
 		'name': 'Ingwaz',
@@ -174,6 +195,7 @@ const runes = {
 		'deep': 'Virtues, Common Sense, The Home, Rest',
 		'negBlurb': 'Labor and Work are the rune\'s reading. Toiling is happening.',
 		'negDeep': 'Impotence, No Movement, Labor, Work, Slavery',
+    'n': 21
 	},
 	22: {
 		'name': 'Dagaz',
@@ -182,6 +204,7 @@ const runes = {
 		'deep': 'Awakening, Clarity, Power to Change, Release',
 		'negBlurb': 'An ending is coming.',
 		'negDeep': 'Limit, Full Circle, Hopelessness, Blindness',
+    'n': 22
 	},
 	23: {
 		'name': 'Orthala',
@@ -190,6 +213,7 @@ const runes = {
 		'deep': 'Experience, Aid by Elders, Source of Saftey, Order',
 		'negBlurb': 'This rune states you do what you are bound to do.',
 		'negDeep': 'Bad Karma, Prejudice, Totalitarianism',
+    'n': 23
 	}
 }
 /* custom rune spread functions */
@@ -248,9 +272,9 @@ const genSpread = (el, rNum) => {
   let l = document.querySelectorAll(`.${c} .runeContainer>.rune`)
   for(let i = 0; i < l.length; i++) {
     if(rr[i][0] === false) {
-      l[i].innerHTML = `<div class="img"></div><div class="desc">${rr[i][1].negBlurb}</div>`
+      l[i].innerHTML = `<div class="img" style=\"background-image:url(\"images/Numbered/${rr[i][1].n < 10 ? '0'+rr[i][1].n : rr[i][1].n}.png\")\"></div><div class="desc">${rr[i][1].negBlurb}</div>`
     } else {
-      l[i].innerHTML = `<div class="img"></div><div class="desc">${rr[i][1].blurb}</div>`
+      l[i].innerHTML = `<div class="img" style=\"background-image:url(\"images/Numbered/${rr[i][1].n < 10 ? '0'+rr[i][1].n : rr[i][1].n}.png\")\"></div><div class="desc">${rr[i][1].blurb}</div>`
     }
   }
 }

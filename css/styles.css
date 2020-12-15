@@ -68,12 +68,14 @@ button:focus-within,
   color: #aaa;
 }
 .img {
+  margin-top: 10px;
   width: 250px;
   height: 250px;
   overflow: hidden;
   background-image: url("../images/blankRune.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-position: center center;
 }
 .desc {
   height: 200px;
