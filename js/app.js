@@ -74,7 +74,7 @@ const runes = {
 	9: {
 		'name': 'Nauthiz',
 		'literal': 'Need, Want',
-		'blurb': '11111111Your endurance is needed for the rune.',
+		'blurb': 'Your endurance is needed for the rune.',
 		'deep': 'Delays, Confusion, Power to overcome',
 		'negBlurb': 'Depravity and Want is shown. Reflect on the issue.',
 		'negDeep': 'Necessity, Want, Depravity, Need, Emotional Hunger',
