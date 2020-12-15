@@ -1,12 +1,12 @@
 const runes = {
 	0: {
-	'name': 'Fehu',
-	'literal': 'Domestic Cow, Wealth',
-	'blurb': 'Luck will be in your favor to come.',
-	'deep': 'Luck, Plenty, Success, Energy, Foresight',
-	'negBlurb': 'Greed may be a downfall for your actions.',
-	'negDeep': 'Greed, Burnout, Discord, Poverty',
-},
+		'name': 'Fehu',
+		'literal': 'Domestic Cow, Wealth',
+		'blurb': 'Luck will be in your favor to come.',
+		'deep': 'Luck, Plenty, Success, Energy, Foresight',
+		'negBlurb': 'Greed may be a downfall for your actions.',
+		'negDeep': 'Greed, Burnout, Discord, Poverty',
+	},
 	1: {
 		'name': 'Uruz',
 		'literal': 'Wild Ox, Wild Bull',
@@ -195,123 +195,131 @@ const runes = {
 
 /* custom rune spread functions */
 const to = (num, el) => {
-  let current = document.querySelectorAll('.runesWrapper .rune').length
-  if(num >= current) {
-    for (let i = 0; i < num - current; i++) {
-      runeContainer1.appendChild(makeRune())
-    }
-  } else {
-    for (let i = current - num; i > 0; i--) {
-      document.querySelectorAll('.runesWrapper .rune')[0].remove();
-    }
-  }
+	let current = document.querySelectorAll('.runesWrapper .rune').length
+	if(num >= current) {
+		for (let i = 0; i < num - current; i++) {
+			runeContainer1.appendChild(makeRune())
+		}
+	} else {
+		for (let i = current - num; i > 0; i--) {
+			document.querySelectorAll('.runesWrapper .rune')[0].remove();
+		}
+	}
 }
 
 const makeRune = () => {
-  let img = document.createElement('div')
-  img.classList.add('img')
-  let desc = document.createElement('div')
-  desc.classList.add('desc')
-  let rune = document.createElement('div')
-  rune.classList.add('rune')
-  rune.appendChild(img)
-  rune.appendChild(desc)
-  return rune
+	let img = document.createElement('div')
+	img.classList.add('img')
+	let desc = document.createElement('div')
+	desc.classList.add('desc')
+	let rune = document.createElement('div')
+	rune.classList.add('rune')
+	rune.appendChild(img)
+	rune.appendChild(desc)
+	return rune
 }
 
 /* generating runes */
 const fetchRunes = (num) => {
-  let r = []
-  let i = 0
-  while(i < num) {
-    let randRune = randomRune();
-    if (!r.includes(randRune)) { r.push(randRune); i++ }
-  }
-  return r
+	let r = []
+	let i = 0
+	while(i < num) {
+		let randRune = randomRune();
+		if (!r.includes(randRune)) { r.push(randRune); i++ }
+	}
+	return r
 }
 
 const randomRune = () => {
-  let n = Math.floor(Math.random() * 24)
-  if((Math.floor(Math.random() * 1000)) < 200) {
-    n = -n
-  }
-  return n
+	let n = Math.floor(Math.random() * 24)
+	if((Math.floor(Math.random() * 1000)) < 200) {
+		n = -n
+	}
+	return n
 }
 
 const genSpread = (el, rNum) => {
-  el = el.closest("section")
-  let c = el.classList[0]
-  let r = fetchRunes(rNum)
-  let rr = []
-  r.forEach((a) => {
-    if(a < 0) { rr.push([false, runes[Math.abs(a)]]) } else { rr.push([true, runes[a]]) }
-  })
-  if (el.classList.contains('daily')) {
-    if(!checkCookie()) {
-      /* ask user for name and stuff and set the values of rr to the runes part of the cookie */
-    }
-    /* if there is a cookie, set the values of rr to those values in the cookie */
-  }
-  let l = document.querySelectorAll(`.${c} .runeContainer>.rune`)
-  for(let i = 0; i < l.length; i++) {
-    if(rr[i][0] === false) {
-      l[i].innerHTML = `<div class="img"></div><div class="desc">${rr[i][1].negBlurb}</div>`
-    } else {
-      l[i].innerHTML = `<div class="img"></div><div class="desc">${rr[i][1].blurb}</div>`
-    }
-  }
+	el = el.closest("section")
+	let c = el.classList[0]
+	let r = fetchRunes(rNum)
+	let rr = []
+	r.forEach((a) => {
+		if(a < 0) { rr.push([false, runes[Math.abs(a)]]) } else { rr.push([true, runes[a]]) }
+	})
+	if (el.classList.contains('daily')) {
+		if(!checkCookie()){
+			/* ask user for name and stuff and set the values of rr to the runes part of the cookie */
+			var user = prompt("Please enter your name:","");
+			if (user != "" && user != null) {
+				setCookie("username", user, 30, r);
+			}
+		}else{
+
+			/* if there is a cookie, set the values of r to those values in the cookie */
+			r = parseRuneArray();
+
+		}
+		let l = document.querySelectorAll(`.${c} .runeContainer>.rune`)
+		for(let i = 0; i < l.length; i++) {
+			if(rr[i][0] === false) {
+				l[i].innerHTML = `<div class="img"></div><div class="desc">${rr[i][1].negBlurb}</div>`
+			} else {
+				l[i].innerHTML = `<div class="img"></div><div class="desc">${rr[i][1].blurb}</div>`
+			}
+		}
+	}
 }
-/* util funcs */
+	/* util funcs */
 
-const checkCookie = () => {
-	var user=getCookie("username");
-  if (user != "") {
-    return;
-  } else {
-     user = prompt("Please enter your name:","");
-     if (user != "" && user != null) {
-       setCookie("username", user, 30);
-     }
-  }
-}
+	const checkCookie = () => {
+		var user=getCookie("username");
+		if (user != "") {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
-const getCookie = (cname) => {
-	var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
+	const setCookie = (cname,cvalue,exdays, r) => {
 
+		var d = new Date();
+		d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		var expires = "expires=" + d.toGMTString();
+		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/" + ";!" + r ;
+	}
+
+	const getCookie = (cname) => {
+		var name = cname + "=";
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split(';');
+		for(var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
 		return "";
+	}
 
-}
+	const parseRuneArray = () =>{
+		var str = document.cookie;
+		var arrStr = str.split("!");  // gets r as a string
+    var r = arrStr[1].split(",").map(Number);
+		return r; // this expires after 24hrs
+	}
 
-const setCookie = (cname,cvalue,exdays) => {
+	const get_Date = () =>{
+		var d = new Date();
+		var date = d.getDate();
+		return date;
+	}
 
-  var d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  var expires = "expires=" + d.toGMTString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-const get_Date = () =>{
-	var d = new Date();
-	var date = d.getDate();
-	return date;
-}
-
-const get_Month =() =>{
-	var d = new Date();
-	var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
- //returns current month:
-	return months[d.getMonth()];
-}
-
-//setCookie("","","");
+	const get_Month =() =>{
+		var d = new Date();
+		var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+		//returns current month:
+		return months[d.getMonth()];
+	}
