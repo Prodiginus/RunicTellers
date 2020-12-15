@@ -77,6 +77,9 @@ button:focus-within,
   background-size: contain;
   background-position: center center;
 }
+.img.rune00 {
+  background-image: url("../images/Numbered/00.png")
+}
 .img.rune01 {
   background-image: url("../images/Numbered/01.png")
 }
@@ -147,7 +150,8 @@ button:focus-within,
   background-image: url("../images/Numbered/23.png")
 }
 .inverted {
-  filter: invert(1)
+  filter: invert(1);
+  transform: rotateX(180deg);
 }
 .desc {
   height: 200px;
