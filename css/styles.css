@@ -77,6 +77,78 @@ button:focus-within,
   background-size: contain;
   background-position: center center;
 }
+.img.rune01 {
+  background-image: url("../images/Numbered/01.png")
+}
+.img.rune02 {
+  background-image: url("../images/Numbered/02.png")
+}
+.img.rune03 {
+  background-image: url("../images/Numbered/03.png")
+}
+.img.rune04 {
+  background-image: url("../images/Numbered/04.png")
+}
+.img.rune05 {
+  background-image: url("../images/Numbered/05.png")
+}
+.img.rune06 {
+  background-image: url("../images/Numbered/06.png")
+}
+.img.rune07 {
+  background-image: url("../images/Numbered/07.png")
+}
+.img.rune08 {
+  background-image: url("../images/Numbered/08.png")
+}
+.img.rune09 {
+  background-image: url("../images/Numbered/09.png")
+}
+.img.rune10 {
+  background-image: url("../images/Numbered/10.png")
+}
+.img.rune11 {
+  background-image: url("../images/Numbered/11.png")
+}
+.img.rune12 {
+  background-image: url("../images/Numbered/12.png")
+}
+.img.rune13 {
+  background-image: url("../images/Numbered/13.png")
+}
+.img.rune14 {
+  background-image: url("../images/Numbered/14.png")
+}
+.img.rune15 {
+  background-image: url("../images/Numbered/15.png")
+}
+.img.rune16 {
+  background-image: url("../images/Numbered/16.png")
+}
+.img.rune17 {
+  background-image: url("../images/Numbered/17.png")
+}
+.img.rune18 {
+  background-image: url("../images/Numbered/18.png")
+}
+.img.rune19 {
+  background-image: url("../images/Numbered/19.png")
+}
+.img.rune20 {
+  background-image: url("../images/Numbered/20.png")
+}
+.img.rune21 {
+  background-image: url("../images/Numbered/21.png")
+}
+.img.rune22 {
+  background-image: url("../images/Numbered/22.png")
+}
+.img.rune23 {
+  background-image: url("../images/Numbered/23.png")
+}
+.inverted {
+  filter: invert(1)
+}
 .desc {
   height: 200px;
   width: 100%;
