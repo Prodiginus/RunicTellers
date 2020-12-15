@@ -276,9 +276,18 @@ const genSpread = (el, rNum) => {
     console.log(bgString);
     console.log(typeof bgString)
     if(rr[i][0] === false) {
-      l[i].innerHTML = `<div class="inverted img rune${runeNum}"></div><div class="desc">${rr[i][1].negBlurb}</div>`
+      l[i].innerHTML = `
+      <div class="inverted img rune${runeNum}"></div>
+      <div class="literal">Literal: ${rr[i][1].literal}</div>
+      <div class="state">Inverted</div>
+      <div class="blurb">Description: ${rr[i][1].negBlurb}</div>
+      <div class="deep">Deeper: ${rr[i][1].negDeep}</div>`
     } else {
-      l[i].innerHTML = `<div class="img rune${runeNum}"></div><div class="desc">${rr[i][1].blurb}</div>`
+      l[i].innerHTML = `
+      <div class="img rune${runeNum}"></div>
+      <div class="literal">Literal: ${rr[i][1].literal}</div>
+      <div class="blurb">Description: ${rr[i][1].blurb}</div>
+      <div class="deep">Deeper: ${rr[i][1].deep}</div>`
     }
   }
 }
