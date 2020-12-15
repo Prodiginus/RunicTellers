@@ -192,6 +192,7 @@ const runes = {
 		'negDeep': 'Bad Karma, Prejudice, Totalitarianism',
 	}
 }
+
 /* custom rune spread functions */
 const to = (num, el) => {
   let current = document.querySelectorAll('.runesWrapper .rune').length
@@ -205,6 +206,7 @@ const to = (num, el) => {
     }
   }
 }
+
 const makeRune = () => {
   let img = document.createElement('div')
   img.classList.add('img')
@@ -216,6 +218,7 @@ const makeRune = () => {
   rune.appendChild(desc)
   return rune
 }
+
 /* generating runes */
 const fetchRunes = (num) => {
   let r = []
@@ -226,6 +229,7 @@ const fetchRunes = (num) => {
   }
   return r
 }
+
 const randomRune = () => {
   let n = Math.floor(Math.random() * 24)
   if((Math.floor(Math.random() * 1000)) < 200) {
@@ -233,8 +237,8 @@ const randomRune = () => {
   }
   return n
 }
+
 const genSpread = (el, rNum) => {
-  /* if cookie exists, do some stuff first */
   el = el.closest("section")
   let c = el.classList[0]
   let r = fetchRunes(rNum)
@@ -243,7 +247,10 @@ const genSpread = (el, rNum) => {
     if(a < 0) { rr.push([false, runes[Math.abs(a)]]) } else { rr.push([true, runes[a]]) }
   })
   if (el.classList.contains('daily')) {
-    checkCookie(r)
+    if(!checkCookie()) {
+      /* ask user for name and stuff and set the values of rr to the runes part of the cookie */
+    }
+    /* if there is a cookie, set the values of rr to those values in the cookie */
   }
   let l = document.querySelectorAll(`.${c} .runeContainer>.rune`)
   for(let i = 0; i < l.length; i++) {
@@ -259,7 +266,7 @@ const genSpread = (el, rNum) => {
 const checkCookie = () => {
 	var user=getCookie("username");
   if (user != "") {
-    alert("Welcome again " + user);
+    return;
   } else {
      user = prompt("Please enter your name:","");
      if (user != "" && user != null) {
@@ -294,5 +301,17 @@ const setCookie = (cname,cvalue,exdays) => {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
+const get_Date = () =>{
+	var d = new Date();
+	var date = d.getDate();
+	return date;
+}
+
+const get_Month =() =>{
+	var d = new Date();
+	var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+ //returns current month:
+	return months[d.getMonth()];
+}
 
 //setCookie("","","");
