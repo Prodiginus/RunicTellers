@@ -192,6 +192,7 @@ const runes = {
 		'negDeep': 'Bad Karma, Prejudice, Totalitarianism',
 	}
 }
+
 /* custom rune spread functions */
 const to = (num, el) => {
   let current = document.querySelectorAll('.runesWrapper .rune').length
@@ -205,6 +206,7 @@ const to = (num, el) => {
     }
   }
 }
+
 const makeRune = () => {
   let img = document.createElement('div')
   img.classList.add('img')
@@ -216,6 +218,7 @@ const makeRune = () => {
   rune.appendChild(desc)
   return rune
 }
+
 /* generating runes */
 const fetchRunes = (num) => {
   let r = []
@@ -226,6 +229,7 @@ const fetchRunes = (num) => {
   }
   return r
 }
+
 const randomRune = () => {
   let n = Math.floor(Math.random() * 24)
   if((Math.floor(Math.random() * 1000)) < 200) {
@@ -233,6 +237,7 @@ const randomRune = () => {
   }
   return n
 }
+
 const genSpread = (el, rNum) => {
   /* if cookie exists, do some stuff first */
   el = el.closest("section")
@@ -259,7 +264,7 @@ const genSpread = (el, rNum) => {
 const checkCookie = () => {
 	var user=getCookie("username");
   if (user != "") {
-    continue;
+    return;
   } else {
      user = prompt("Please enter your name:","");
      if (user != "" && user != null) {
