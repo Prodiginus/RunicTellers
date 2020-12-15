@@ -271,10 +271,23 @@ const genSpread = (el, rNum) => {
   }
   let l = document.querySelectorAll(`.${c} .runeContainer>.rune`)
   for(let i = 0; i < l.length; i++) {
+    let runeNum = rr[i][1].n < 10 ? '0'+rr[i][1].n : rr[i][1].n
+    let bgString = String(`"background-image: url("../images/Numbered/${runeNum}.png")"`)
+    console.log(bgString);
+    console.log(typeof bgString)
     if(rr[i][0] === false) {
-      l[i].innerHTML = `<div class="img" style=\"background-image:url(\"images/Numbered/${rr[i][1].n < 10 ? '0'+rr[i][1].n : rr[i][1].n}.png\")\"></div><div class="desc">${rr[i][1].negBlurb}</div>`
+      l[i].innerHTML = `
+      <div class="inverted img rune${runeNum}"></div>
+      <div class="literal">Literal: ${rr[i][1].literal}</div>
+      <div class="state">Inverted</div>
+      <div class="blurb">Description: ${rr[i][1].negBlurb}</div>
+      <div class="deep">Deeper: ${rr[i][1].negDeep}</div>`
     } else {
-      l[i].innerHTML = `<div class="img" style=\"background-image:url(\"images/Numbered/${rr[i][1].n < 10 ? '0'+rr[i][1].n : rr[i][1].n}.png\")\"></div><div class="desc">${rr[i][1].blurb}</div>`
+      l[i].innerHTML = `
+      <div class="img rune${runeNum}"></div>
+      <div class="literal">Literal: ${rr[i][1].literal}</div>
+      <div class="blurb">Description: ${rr[i][1].blurb}</div>
+      <div class="deep">Deeper: ${rr[i][1].deep}</div>`
     }
   }
 }
