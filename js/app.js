@@ -192,6 +192,7 @@ const runes = {
 		'negDeep': 'Bad Karma, Prejudice, Totalitarianism',
 	}
 }
+
 /* custom rune spread functions */
 const to = (num, el) => {
   let current = document.querySelectorAll('.runesWrapper .rune').length
@@ -205,6 +206,7 @@ const to = (num, el) => {
     }
   }
 }
+
 const makeRune = () => {
   let img = document.createElement('div')
   img.classList.add('img')
@@ -216,6 +218,7 @@ const makeRune = () => {
   rune.appendChild(desc)
   return rune
 }
+
 /* generating runes */
 const fetchRunes = (num) => {
   let r = []
@@ -226,6 +229,7 @@ const fetchRunes = (num) => {
   }
   return r
 }
+
 const randomRune = () => {
   let n = Math.floor(Math.random() * 24)
   if((Math.floor(Math.random() * 1000)) < 200) {
@@ -233,6 +237,7 @@ const randomRune = () => {
   }
   return n
 }
+
 const genSpread = (el, rNum) => {
   el = el.closest("section")
   let c = el.classList[0]
@@ -257,14 +262,53 @@ const genSpread = (el, rNum) => {
   }
 }
 /* util funcs */
-const addCookie = () => {
-               var now = new Date();
-               now.setMonth( now.getMonth()  );
-               cookievalue = escape(document.myform.customer.value);
-               document.cookie="name=" + cookievalue;
-               document.cookie = "expires=" + now.toUTCString();
-               document.write ( cookievalue + ", view your daily fortune below: " );
-            }
-const parseCookie = () => {
 
+const checkCookie = () => {
+	var user=getCookie("username");
+  if (user != "") {
+    return;
+  } else {
+     user = prompt("Please enter your name:","");
+     if (user != "" && user != null) {
+       setCookie("username", user, 30);
+     }
+  }
 }
+
+const getCookie = (cname) => {
+	var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+const setCookie = (cname,cvalue,exdays) => {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+const get_Date = () =>{
+	var d = new Date();
+	var date = d.getDate();
+	return date;
+}
+
+const get_Month =() =>{
+	var d = new Date();
+	var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+ //returns current month:
+	return months[d.getMonth()];
+}
+
+//setCookie("","","");
